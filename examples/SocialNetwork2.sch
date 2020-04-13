@@ -17,8 +17,8 @@ table USER
 
 table FOLLOWS
 (
-  _ Followed _ --> USER.Num,
-  _ Follower _ --> USER.Num
+  _ Followed _ int --> USER.Num,
+  _ Follower _ int --> USER.Num
 )
 
 table POST 
