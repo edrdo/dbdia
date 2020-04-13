@@ -28,7 +28,7 @@ table MOVIE_ACTOR
 table MOVIE_GENRE 
 ( 
    _ MovieId _ --> MOVIE.MovieId, 
-   _ GenreId _ --> GENRE.Label
+   _ GenreId _ --> GENRE.GenreId
 )
 
 table STREAM 
