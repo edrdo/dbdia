@@ -14,23 +14,6 @@ entRelModelItem: ent=entity | rel=relation | we=weakEntity;
 
 entity: name=ID '(' (entityField (',' entityField)*)? ')';
 
-weakEntity: parent_entity=ID 
-            parent_entity_part=parentEntityPart
-            '<<' idrel=ID '>>'
-            dependent_entity=entity ; 
-            
-parentEntityPart:
-    part='-' '-'*
-  | part='=' '='*;
-  
-relation: entityA=ID constrA=relationConstraints
-          '<' name=ID ('(' nonKeyField (',' nonKeyField)* ')')? '>' 
-          constrB=relationConstraints entityB=ID ;
-
-relationConstraints: 
-    part='-' '-'* card=('1' | 'M' | 'N') '-'+
-  | part='=' '='* card=('1' | 'M' | 'N') '='+;
-
 entityField : 
      keyField
   |  nonKeyField;
@@ -54,6 +37,25 @@ compositeField :
   name=ID '(' nonKeyField (',' nonKeyField )*  ')'  ; 
 multivalueField: 
   '{' (simpleField | compositeField) '}' ;
+
+weakEntity: parent_entity=ID 
+            parent_entity_part=parentEntityPart
+            '<<' idrel=ID '>>'
+            dependent_entity=entity ; 
+            
+parentEntityPart:
+    part='-' '-'*
+  | part='=' '='*;
+  
+relation: entityA=ID constrA=relationConstraints
+          '<' name=ID ('(' nonKeyField (',' nonKeyField)* ')')? '>' 
+          constrB=relationConstraints entityB=ID ;
+
+relationConstraints: 
+    part='-' '-'* card=('1' | 'M' | 'N') '-'+
+  | part='=' '='* card=('1' | 'M' | 'N') '='+;
+
+
 
 // RELATIONAL MODEL
 
@@ -85,7 +87,8 @@ tablePlainField returns [ String nameOfField ]:
   name=ID { $nameOfField = $name.getText();} ; 
   
 tableFieldTypeInfo:
-  (':' type=ID)?;
+  type=ID;
+  
 tableForeignKeyReference: 
   '-->' table=ID '.' field=ID;
 

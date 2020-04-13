@@ -1,4 +1,6 @@
-
+//
+// Simple "social network" - Er model
+//
 USER(_ Login _, Nome, Email)
 
 POST(_ Id _, Text, { HashTag })

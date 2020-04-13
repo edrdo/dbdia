@@ -5,7 +5,9 @@ import java.io.PrintStream;
 import dbdia.antlr.DSLParser;
 import dbdia.antlr.DSLParser.RelationalSchemaContext;
 import dbdia.antlr.DSLParser.TableDefinitionContext;
+import dbdia.antlr.DSLParser.TableFieldBaseDefContext;
 import dbdia.antlr.DSLParser.TableFieldContext;
+import dbdia.antlr.DSLParser.TableFieldTypeInfoContext;
 
 
 /**
@@ -77,24 +79,26 @@ class SchemaDiagramGenerator extends DiagramGenerator {
     return null;
   }
   
-  private Void emitField(String name, String label) {
-    emit("  <tr><td align='left' port='", name, "'>", label, "</td></tr>");
+  private Void emitField(String name, String label, TableFieldBaseDefContext tf) {
+    TableFieldTypeInfoContext ti = ((TableFieldContext) (tf.getParent())).type;
+    String typeInfo =  ti != null  ? " <i>" + ti.type.getText() + "</i>" : "";
+    emit("  <tr><td align='left' port='", name, "'>", label, typeInfo, "</td></tr>");
     return null;
   }
   
   @Override 
   public Void visitTableKeyField(DSLParser.TableKeyFieldContext tkf) { 
-    return emitField(tkf.nameOfField, "<u>" + tkf.nameOfField + "</u>");
+    return emitField(tkf.nameOfField, "<u>" + tkf.nameOfField + "</u>", (TableFieldBaseDefContext) tkf.getParent());
   }
   
   @Override 
   public Void visitTableOptionalField(DSLParser.TableOptionalFieldContext tof) { 
-    return emitField(tof.nameOfField, tof.nameOfField + " ?");
+    return emitField(tof.nameOfField, tof.nameOfField + " ?", (TableFieldBaseDefContext) tof.getParent());
   }
  
   @Override 
   public Void visitTablePlainField(DSLParser.TablePlainFieldContext tpf) { 
-    return emitField(tpf.nameOfField, tpf.nameOfField);
+    return emitField(tpf.nameOfField, tpf.nameOfField, (TableFieldBaseDefContext) tpf.getParent());
   }
 
 }

@@ -50,46 +50,6 @@ public interface DSLListener extends ParseTreeListener {
 	 */
 	void exitEntity(DSLParser.EntityContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link DSLParser#weakEntity}.
-	 * @param ctx the parse tree
-	 */
-	void enterWeakEntity(DSLParser.WeakEntityContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link DSLParser#weakEntity}.
-	 * @param ctx the parse tree
-	 */
-	void exitWeakEntity(DSLParser.WeakEntityContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link DSLParser#parentEntityPart}.
-	 * @param ctx the parse tree
-	 */
-	void enterParentEntityPart(DSLParser.ParentEntityPartContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link DSLParser#parentEntityPart}.
-	 * @param ctx the parse tree
-	 */
-	void exitParentEntityPart(DSLParser.ParentEntityPartContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link DSLParser#relation}.
-	 * @param ctx the parse tree
-	 */
-	void enterRelation(DSLParser.RelationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link DSLParser#relation}.
-	 * @param ctx the parse tree
-	 */
-	void exitRelation(DSLParser.RelationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link DSLParser#relationConstraints}.
-	 * @param ctx the parse tree
-	 */
-	void enterRelationConstraints(DSLParser.RelationConstraintsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link DSLParser#relationConstraints}.
-	 * @param ctx the parse tree
-	 */
-	void exitRelationConstraints(DSLParser.RelationConstraintsContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link DSLParser#entityField}.
 	 * @param ctx the parse tree
 	 */
@@ -169,6 +129,46 @@ public interface DSLListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMultivalueField(DSLParser.MultivalueFieldContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DSLParser#weakEntity}.
+	 * @param ctx the parse tree
+	 */
+	void enterWeakEntity(DSLParser.WeakEntityContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DSLParser#weakEntity}.
+	 * @param ctx the parse tree
+	 */
+	void exitWeakEntity(DSLParser.WeakEntityContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DSLParser#parentEntityPart}.
+	 * @param ctx the parse tree
+	 */
+	void enterParentEntityPart(DSLParser.ParentEntityPartContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DSLParser#parentEntityPart}.
+	 * @param ctx the parse tree
+	 */
+	void exitParentEntityPart(DSLParser.ParentEntityPartContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DSLParser#relation}.
+	 * @param ctx the parse tree
+	 */
+	void enterRelation(DSLParser.RelationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DSLParser#relation}.
+	 * @param ctx the parse tree
+	 */
+	void exitRelation(DSLParser.RelationContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DSLParser#relationConstraints}.
+	 * @param ctx the parse tree
+	 */
+	void enterRelationConstraints(DSLParser.RelationConstraintsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DSLParser#relationConstraints}.
+	 * @param ctx the parse tree
+	 */
+	void exitRelationConstraints(DSLParser.RelationConstraintsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DSLParser#relationalSchema}.
 	 * @param ctx the parse tree

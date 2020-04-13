@@ -1,4 +1,6 @@
-
+//
+// Simple "social network" - relational schema
+//
 table USER
 (
   _ Login _,

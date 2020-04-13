@@ -37,30 +37,6 @@ public interface DSLVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitEntity(DSLParser.EntityContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link DSLParser#weakEntity}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitWeakEntity(DSLParser.WeakEntityContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link DSLParser#parentEntityPart}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitParentEntityPart(DSLParser.ParentEntityPartContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link DSLParser#relation}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitRelation(DSLParser.RelationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link DSLParser#relationConstraints}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitRelationConstraints(DSLParser.RelationConstraintsContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link DSLParser#entityField}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -108,6 +84,30 @@ public interface DSLVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitMultivalueField(DSLParser.MultivalueFieldContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DSLParser#weakEntity}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWeakEntity(DSLParser.WeakEntityContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DSLParser#parentEntityPart}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParentEntityPart(DSLParser.ParentEntityPartContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DSLParser#relation}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRelation(DSLParser.RelationContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DSLParser#relationConstraints}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRelationConstraints(DSLParser.RelationConstraintsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link DSLParser#relationalSchema}.
 	 * @param ctx the parse tree

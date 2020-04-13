@@ -1,12 +1,33 @@
+/*
+ dbdia example - relationship definition examples
+ Eduardo Marques
+ https://github.com/edrdo/dbdia
+*/
 
-EntityA ( )
-EntityB ( )
-EntityC ( )
-/* 1 to N, total participation by EntityB */
-EntityA --- 1 --- < Rel1 > == N == EntityB
+EntityA ( ) // with no attributes (just for convenience)
+EntityB ( ) // you can in any case ommit attributes in diagrams
+EntityC ( ) // using the 'rel' diagram type generation
 
-/* M to N, partial participation by both EntityA and EntityB */
-EntityA --- M --- < Rel2 > -- N -- EntityB
+// Relationship: Rel1 
+// Entities involved: EntityA and EntityB
+// Cardinality: 1 to N
+// Participation: partial for EntityA, total for EntityB
+// Relation attributes: none
 
-/* 1 to 1, total partication by EntityA - relation has attributes */
-EntityA === 1 === < Rel3( RAttr1, { RAttr2 } )> -- 1 -- EntityC
+EntityA --- 1 --- < Rel1 > === N === EntityB
+
+// Relationship: Rel2
+// Entities involved: EntityA and EntityB
+// Cardinality: M to N
+// Participation: partial for both entities
+// Relation attributes: none
+
+EntityA --- M --- < Rel2 > --- N --- EntityB
+
+// Relationship: Rel3
+// Entities involved: EntityA and EntityC
+// Cardinality: 1 to 1
+// Participation: total for EntityA, partial for EntityC
+// Relation attributes: Rattr1, { RAttr2 } as shown.
+
+EntityA === 1 === < Rel3( RAttr1, { RAttr2 } )> --- 1 --- EntityC

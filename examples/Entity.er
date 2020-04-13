@@ -1,4 +1,8 @@
-
+/*
+ dbdia example - entity definitions and the various attribute types
+ Eduardo Marques
+ https://github.com/edrdo/dbdia
+*/
 EntityName 
 (
   _ KeyField _,
