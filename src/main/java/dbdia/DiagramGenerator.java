@@ -27,12 +27,11 @@ abstract class DiagramGenerator extends DSLBaseVisitor<Void> {
     return this;
   }
   
-  final <T extends ParserRuleContext>  DiagramGenerator recurse(T ctx) {
+  final <T extends ParserRuleContext> void recurse(T ctx) {
     //out.println(depth + ": "+ ctx.getClass().getSimpleName());
     depth ++;
     visitChildren(ctx);
     depth--;
-    return this;
   }
   
   final void section(Runnable r) {
