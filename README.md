@@ -16,7 +16,7 @@ The visual syntax employed by __dbdia__ in ER and relational diagrams  mostly fo
 
 ## Run dbdia online using a Colab notebook
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/edrdo/dbdia//blob/0.1/src/main/colab/dbdia.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/edrdo/dbdia//blob/master/src/main/colab/dbdia.ipynb)
 
 ## Examples
 
