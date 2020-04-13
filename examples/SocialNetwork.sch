@@ -1,6 +1,8 @@
-//
-// Simple "social network" - relational schema
-//
+/*
+ dbdia example - simple "social network" - relational schema
+ Eduardo Marques
+ https://github.com/edrdo/dbdia
+*/
 table USER
 (
   _ Login _,

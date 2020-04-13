@@ -13,4 +13,4 @@ USER --- M --- <LIKES>  --- N ---  POST
 
 POST --------- << HAS >> COMMENT(_ Order _ , Text) 
 
-USER --- M --- <REACTS> ==== N === COMMENT
+USER --- 1 --- <REACTS> ==== N === COMMENT

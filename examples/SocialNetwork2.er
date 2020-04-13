@@ -1,0 +1,21 @@
+
+/*
+ dbdia example - simple "social network" - ER model
+ Eduardo Marques
+ https://github.com/edrdo/dbdia
+*/
+
+USER(_ Num _, Login, Joined, Name, BirthDate, . Age ., 
+    Sex, Contact(Phone ?, Email))
+
+POST(_ Id _, Creation, Content, { HashTag })
+
+USER --- M --- <FOLLOWS> --- N --- USER
+
+USER --- 1 --- <WRITES> === N ===  POST 
+
+USER --- M --- <LIKES>  --- N ---  POST
+
+POST --------- << HAS >> COMMENT(_ Order _ , Text, Creation) 
+
+USER --- 1 --- <REACTS> ==== N === COMMENT
