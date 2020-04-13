@@ -1,0 +1,14 @@
+
+USER(_ Login _, Nome, Email)
+
+POST(_ Id _, Text, { HashTag })
+
+USER --- M --- <FOLLOWS> --- N --- USER
+
+USER --- 1 --- <WRITES> === N ===  POST 
+
+USER --- M --- <LIKES>  --- N ---  POST
+
+POST --------- << HAS >> COMMENT(_ Order _ , Text) 
+
+USER --- M --- <REACTS> ==== N === COMMENT

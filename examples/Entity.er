@@ -1,0 +1,10 @@
+
+EntityName 
+(
+  _ KeyField _,
+  OptionalField ?,
+  . DerivedField ., 
+  { MultiValueField },
+  CompositeField ( SubField1, { SubField2 }, SubField3 ?, . SubField4 .),
+  { ComplexField(SubField1, SubField2(SubField21, SubField22)) } 
+)

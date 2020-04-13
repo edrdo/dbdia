@@ -1,0 +1,11 @@
+
+EntityA ( _ KeyA _ )
+EntityB ( _ KeyB _ )
+
+EntityA --- << IdentRel1 >> WeakEntA(_ PKeyA _, OtherWA)
+
+EntityB --- M --- <Rel> --- N --- WeakEntA
+
+EntityB === << IdentRel2 >> WeakEntB(_ PKeyWB _, OtherWB)
+
+

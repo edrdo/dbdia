@@ -1,0 +1,12 @@
+
+EntityA ( )
+EntityB ( )
+EntityC ( )
+/* 1 to N, total participation by EntityB */
+EntityA --- 1 --- < Rel1 > == N == EntityB
+
+/* M to N, partial participation by both EntityA and EntityB */
+EntityA --- M --- < Rel2 > -- N -- EntityB
+
+/* 1 to 1, total partication by EntityA - relation has attributes */
+EntityA === 1 === < Rel3( RAttr1, { RAttr2 } )> -- 1 -- EntityC

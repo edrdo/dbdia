@@ -1,0 +1,42 @@
+<assembly>
+    <id>release</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <files>
+        <file>
+            <source>LICENSE.txt</source>
+            <outputDirectory>.</outputDirectory>
+        </file>
+        <file>
+            <source>README.md</source>
+            <outputDirectory>.</outputDirectory>
+        </file>
+        <file>
+            <source>${project.build.directory}/dbdia-${project.version}.jar</source>
+            <outputDirectory>bin</outputDirectory>
+        </file>
+    </files>
+    <fileSets>
+        <fileSet>
+            <directory>scripts</directory>
+            <outputDirectory>bin</outputDirectory>
+            <fileMode>754</fileMode>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>examples</directory>
+            <outputDirectory>examples</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>bin</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
+
