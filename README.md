@@ -24,6 +24,9 @@ Check the __examples__ directory in this repository.
 
 The examples can be tested in the Colab notebook, and you may also find them in the dbdia release archive.
 
+![Example ER model](/examples/SocialNetwork2_er.svg)
+![Example Schema](/examples/SocialNetwork2_sch.svg)
+
 ## Download, install, and use
 
 ### Dependencies
