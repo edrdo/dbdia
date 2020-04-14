@@ -2,7 +2,7 @@
 
 __Author: [Eduardo R. B. Marques](https://www.dcc.fc.up.pt/~edrdo), DCC/FCUP, 2020__
 
-This software is open-source under the terms of the __Apache License 2.0__.
+__dbdia__ is open-source software under the terms of the __Apache License 2.0__.
 
 ## Summary
 
