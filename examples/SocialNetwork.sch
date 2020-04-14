@@ -1,5 +1,5 @@
 /*
- dbdia example - simple "social network" - relational schema
+ dbdia example - Relational schema for simple "social network"
  Eduardo Marques
  https://github.com/edrdo/dbdia
 */
