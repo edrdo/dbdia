@@ -1,7 +1,9 @@
 
-//
-// Relational schema for the MovieStream database
-//
+/*
+ dbdia example - MovieStream database (https://www.dcc.fc.up.pt/~edrdo/aulas/bd/teoricas/bd_movie_stream.pdf)
+ Eduardo Marques
+ https://github.com/edrdo/dbdia
+*/
 table MOVIE 
 ( 
   _ MovieId _ int, 
