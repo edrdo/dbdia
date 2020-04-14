@@ -1,6 +1,8 @@
-//
-// Simple "social network" - Er model
-//
+/*
+ dbdia example - ER model for simple "social network"
+ Eduardo Marques
+ https://github.com/edrdo/dbdia
+*/
 USER(_ Login _, Nome, Email)
 
 POST(_ Id _, Text, { HashTag })
