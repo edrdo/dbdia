@@ -8,7 +8,7 @@
 USER(_ Num _, Login, Joined, Name, BirthDate, . Age ., 
     Sex, Contact(Phone ?, Email))
 
-POST(_ Id _, Creation, Content, { HashTag })
+POST(_ Num _, Creation, Content, { HashTag })
 
 USER --- M --- <FOLLOWS> --- N --- USER
 
