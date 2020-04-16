@@ -14,7 +14,7 @@ table A
 )
 
 // Type info is optional - this table has type annotations per each field
-// (any kind of identifier is accept) 
+// Any identifier is accepted for the type designation.
 table B
 (
   _ PrimaryKey _ int, 
