@@ -69,7 +69,7 @@ public enum Main {
           System.err.println(VERSION);
           break;
         default:
-          System.err.print("Invalid arguments. Execute 'dbdia help' for help.%n");
+          System.err.printf("Invalid arguments. Execute 'dbdia help' for help.%n");
           System.exit(1);
       }
       System.exit(0);
