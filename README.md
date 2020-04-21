@@ -65,3 +65,17 @@ __Options__
 
 - Type `dbdia help` for a list of options.
 
+## Compiling from scratch
+
+Requirements:
+
+- Java JDK (OracleJDK or OpenJDK) for Java 8 or higher
+- Maven 3.x 
+
+Commands:
+
+```
+git clone git@github.com:edrdo/dbdia.git
+cd dbdia
+mvn package 
+```
