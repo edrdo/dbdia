@@ -20,9 +20,8 @@ The visual syntax employed by __dbdia__ in ER and relational diagrams  mostly fo
 
 ## Examples
 
-Check the __examples__ directory in this repository.
-
-The examples can be tested in the Colab notebook, and you may also find them in the dbdia release archive.
+Check the __examples__ directory in this repository or in the dbdia release archive.
+The examples can be also be tested directly in the Colab notebook. 
 
 ![Example ER model](/examples/SocialNetwork2_er.svg)
 ![Example Schema](/examples/SocialNetwork2_sch.svg)
