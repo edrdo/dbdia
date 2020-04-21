@@ -8,11 +8,16 @@ root: entRelModel | relationalSchema;
 
 // ENTITY-RELATIONSHIP MODEL
 
-entRelModel: entRelModelItem*;
+entRelModel: 
+  entRelModelItem* ;
 
-entRelModelItem: ent=entity | rel=relation | we=weakEntity;
+entRelModelItem: 
+    ent=entity 
+  | rel=relationship 
+  | we=weakEntity ;
 
-entity: name=ID '(' (entityField (',' entityField)*)? ')';
+entity: 
+  name=ID '(' (entityField (',' entityField)*)? ')';
 
 entityField : 
      keyField
@@ -27,31 +32,37 @@ nonKeyField:
 
 keyField: 
   '_' name=ID '_' ;  
+  
 simpleField: 
   name=ID; 
+  
 optionalField: 
   name=ID '?';
+  
 derivedField:
   '.' name=ID '.';
+  
 compositeField : 
   name=ID '(' nonKeyField (',' nonKeyField )*  ')'  ; 
+  
 multivalueField: 
   '{' (simpleField | compositeField) '}' ;
 
-weakEntity: parent_entity=ID 
-            parent_entity_part=parentEntityPart
-            '<<' idrel=ID '>>'
-            dependent_entity=entity ; 
+weakEntity: 
+  parent_entity=ID 
+  parent_entity_part=parentEntityPart
+  '<<' idrel=ID '>>'
+  dependent_entity=entity ; 
             
 parentEntityPart:
     part='-' '-'*
   | part='=' '='*;
   
-relation: entityA=ID constrA=relationConstraints
+relationship: entityA=ID constrA=relationshipConstraints
           '<' name=ID ('(' nonKeyField (',' nonKeyField)* ')')? '>' 
-          constrB=relationConstraints entityB=ID ;
+          constrB=relationshipConstraints entityB=ID ;
 
-relationConstraints: 
+relationshipConstraints: 
     part='-' '-'* card=('1' | 'M' | 'N') '-'+
   | part='=' '='* card=('1' | 'M' | 'N') '='+;
 
@@ -110,4 +121,3 @@ LineComment
     
 // WHITE SPACE
 UNICODE_WS : [\p{White_Space}] -> skip;
-

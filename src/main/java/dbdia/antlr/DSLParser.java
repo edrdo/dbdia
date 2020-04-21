@@ -27,7 +27,7 @@ public class DSLParser extends Parser {
 		RULE_entityField = 4, RULE_nonKeyField = 5, RULE_keyField = 6, RULE_simpleField = 7, 
 		RULE_optionalField = 8, RULE_derivedField = 9, RULE_compositeField = 10, 
 		RULE_multivalueField = 11, RULE_weakEntity = 12, RULE_parentEntityPart = 13, 
-		RULE_relation = 14, RULE_relationConstraints = 15, RULE_relationalSchema = 16, 
+		RULE_relationship = 14, RULE_relationshipConstraints = 15, RULE_relationalSchema = 16, 
 		RULE_relationalSchemaItem = 17, RULE_tableDefinition = 18, RULE_tableField = 19, 
 		RULE_tableFieldBaseDef = 20, RULE_tableKeyField = 21, RULE_tableOptionalField = 22, 
 		RULE_tablePlainField = 23, RULE_tableFieldTypeInfo = 24, RULE_tableForeignKeyReference = 25;
@@ -35,10 +35,10 @@ public class DSLParser extends Parser {
 		return new String[] {
 			"root", "entRelModel", "entRelModelItem", "entity", "entityField", "nonKeyField", 
 			"keyField", "simpleField", "optionalField", "derivedField", "compositeField", 
-			"multivalueField", "weakEntity", "parentEntityPart", "relation", "relationConstraints", 
-			"relationalSchema", "relationalSchemaItem", "tableDefinition", "tableField", 
-			"tableFieldBaseDef", "tableKeyField", "tableOptionalField", "tablePlainField", 
-			"tableFieldTypeInfo", "tableForeignKeyReference"
+			"multivalueField", "weakEntity", "parentEntityPart", "relationship", 
+			"relationshipConstraints", "relationalSchema", "relationalSchemaItem", 
+			"tableDefinition", "tableField", "tableFieldBaseDef", "tableKeyField", 
+			"tableOptionalField", "tablePlainField", "tableFieldTypeInfo", "tableForeignKeyReference"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -230,13 +230,13 @@ public class DSLParser extends Parser {
 
 	public static class EntRelModelItemContext extends ParserRuleContext {
 		public EntityContext ent;
-		public RelationContext rel;
+		public RelationshipContext rel;
 		public WeakEntityContext we;
 		public EntityContext entity() {
 			return getRuleContext(EntityContext.class,0);
 		}
-		public RelationContext relation() {
-			return getRuleContext(RelationContext.class,0);
+		public RelationshipContext relationship() {
+			return getRuleContext(RelationshipContext.class,0);
 		}
 		public WeakEntityContext weakEntity() {
 			return getRuleContext(WeakEntityContext.class,0);
@@ -278,7 +278,7 @@ public class DSLParser extends Parser {
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(63);
-				((EntRelModelItemContext)_localctx).rel = relation();
+				((EntRelModelItemContext)_localctx).rel = relationship();
 				}
 				break;
 			case 3:
@@ -1005,21 +1005,21 @@ public class DSLParser extends Parser {
 		return _localctx;
 	}
 
-	public static class RelationContext extends ParserRuleContext {
+	public static class RelationshipContext extends ParserRuleContext {
 		public Token entityA;
-		public RelationConstraintsContext constrA;
+		public RelationshipConstraintsContext constrA;
 		public Token name;
-		public RelationConstraintsContext constrB;
+		public RelationshipConstraintsContext constrB;
 		public Token entityB;
 		public List<TerminalNode> ID() { return getTokens(DSLParser.ID); }
 		public TerminalNode ID(int i) {
 			return getToken(DSLParser.ID, i);
 		}
-		public List<RelationConstraintsContext> relationConstraints() {
-			return getRuleContexts(RelationConstraintsContext.class);
+		public List<RelationshipConstraintsContext> relationshipConstraints() {
+			return getRuleContexts(RelationshipConstraintsContext.class);
 		}
-		public RelationConstraintsContext relationConstraints(int i) {
-			return getRuleContext(RelationConstraintsContext.class,i);
+		public RelationshipConstraintsContext relationshipConstraints(int i) {
+			return getRuleContext(RelationshipConstraintsContext.class,i);
 		}
 		public List<NonKeyFieldContext> nonKeyField() {
 			return getRuleContexts(NonKeyFieldContext.class);
@@ -1027,40 +1027,40 @@ public class DSLParser extends Parser {
 		public NonKeyFieldContext nonKeyField(int i) {
 			return getRuleContext(NonKeyFieldContext.class,i);
 		}
-		public RelationContext(ParserRuleContext parent, int invokingState) {
+		public RelationshipContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_relation; }
+		@Override public int getRuleIndex() { return RULE_relationship; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DSLListener ) ((DSLListener)listener).enterRelation(this);
+			if ( listener instanceof DSLListener ) ((DSLListener)listener).enterRelationship(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DSLListener ) ((DSLListener)listener).exitRelation(this);
+			if ( listener instanceof DSLListener ) ((DSLListener)listener).exitRelationship(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof DSLVisitor ) return ((DSLVisitor<? extends T>)visitor).visitRelation(this);
+			if ( visitor instanceof DSLVisitor ) return ((DSLVisitor<? extends T>)visitor).visitRelationship(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final RelationContext relation() throws RecognitionException {
-		RelationContext _localctx = new RelationContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_relation);
+	public final RelationshipContext relationship() throws RecognitionException {
+		RelationshipContext _localctx = new RelationshipContext(_ctx, getState());
+		enterRule(_localctx, 28, RULE_relationship);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(147);
-			((RelationContext)_localctx).entityA = match(ID);
+			((RelationshipContext)_localctx).entityA = match(ID);
 			setState(148);
-			((RelationContext)_localctx).constrA = relationConstraints();
+			((RelationshipContext)_localctx).constrA = relationshipConstraints();
 			setState(149);
 			match(T__12);
 			setState(150);
-			((RelationContext)_localctx).name = match(ID);
+			((RelationshipContext)_localctx).name = match(ID);
 			setState(162);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -1094,9 +1094,9 @@ public class DSLParser extends Parser {
 			setState(164);
 			match(T__13);
 			setState(165);
-			((RelationContext)_localctx).constrB = relationConstraints();
+			((RelationshipContext)_localctx).constrB = relationshipConstraints();
 			setState(166);
-			((RelationContext)_localctx).entityB = match(ID);
+			((RelationshipContext)_localctx).entityB = match(ID);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1110,31 +1110,31 @@ public class DSLParser extends Parser {
 		return _localctx;
 	}
 
-	public static class RelationConstraintsContext extends ParserRuleContext {
+	public static class RelationshipConstraintsContext extends ParserRuleContext {
 		public Token part;
 		public Token card;
-		public RelationConstraintsContext(ParserRuleContext parent, int invokingState) {
+		public RelationshipConstraintsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_relationConstraints; }
+		@Override public int getRuleIndex() { return RULE_relationshipConstraints; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DSLListener ) ((DSLListener)listener).enterRelationConstraints(this);
+			if ( listener instanceof DSLListener ) ((DSLListener)listener).enterRelationshipConstraints(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DSLListener ) ((DSLListener)listener).exitRelationConstraints(this);
+			if ( listener instanceof DSLListener ) ((DSLListener)listener).exitRelationshipConstraints(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof DSLVisitor ) return ((DSLVisitor<? extends T>)visitor).visitRelationConstraints(this);
+			if ( visitor instanceof DSLVisitor ) return ((DSLVisitor<? extends T>)visitor).visitRelationshipConstraints(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final RelationConstraintsContext relationConstraints() throws RecognitionException {
-		RelationConstraintsContext _localctx = new RelationConstraintsContext(_ctx, getState());
-		enterRule(_localctx, 30, RULE_relationConstraints);
+	public final RelationshipConstraintsContext relationshipConstraints() throws RecognitionException {
+		RelationshipConstraintsContext _localctx = new RelationshipConstraintsContext(_ctx, getState());
+		enterRule(_localctx, 30, RULE_relationshipConstraints);
 		int _la;
 		try {
 			setState(194);
@@ -1144,7 +1144,7 @@ public class DSLParser extends Parser {
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(168);
-				((RelationConstraintsContext)_localctx).part = match(T__10);
+				((RelationshipConstraintsContext)_localctx).part = match(T__10);
 				setState(172);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
@@ -1160,10 +1160,10 @@ public class DSLParser extends Parser {
 					_la = _input.LA(1);
 				}
 				setState(175);
-				((RelationConstraintsContext)_localctx).card = _input.LT(1);
+				((RelationshipConstraintsContext)_localctx).card = _input.LT(1);
 				_la = _input.LA(1);
 				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__14) | (1L << T__15) | (1L << T__16))) != 0)) ) {
-					((RelationConstraintsContext)_localctx).card = (Token)_errHandler.recoverInline(this);
+					((RelationshipConstraintsContext)_localctx).card = (Token)_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1190,7 +1190,7 @@ public class DSLParser extends Parser {
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(181);
-				((RelationConstraintsContext)_localctx).part = match(T__11);
+				((RelationshipConstraintsContext)_localctx).part = match(T__11);
 				setState(185);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
@@ -1206,10 +1206,10 @@ public class DSLParser extends Parser {
 					_la = _input.LA(1);
 				}
 				setState(188);
-				((RelationConstraintsContext)_localctx).card = _input.LT(1);
+				((RelationshipConstraintsContext)_localctx).card = _input.LT(1);
 				_la = _input.LA(1);
 				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__14) | (1L << T__15) | (1L << T__16))) != 0)) ) {
-					((RelationConstraintsContext)_localctx).card = (Token)_errHandler.recoverInline(this);
+					((RelationshipConstraintsContext)_localctx).card = (Token)_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;

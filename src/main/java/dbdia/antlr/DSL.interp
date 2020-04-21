@@ -65,8 +65,8 @@ compositeField
 multivalueField
 weakEntity
 parentEntityPart
-relation
-relationConstraints
+relationship
+relationshipConstraints
 relationalSchema
 relationalSchemaItem
 tableDefinition

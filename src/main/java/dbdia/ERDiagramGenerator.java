@@ -104,24 +104,24 @@ class ERDiagramGenerator extends DiagramGenerator {
   static final String TOTAL_PARTICIPATION = "=";
   static final String PARTIAL_PARTIPATION = "-";
 
-  static RelationConstraints rc(String cardinality, String participation) {
-    return new RelationConstraints(cardinality, participation);
+  static RelationshipConstraints rc(String cardinality, String participation) {
+    return new RelationshipConstraints(cardinality, participation);
   }
 
-  static RelationConstraints rc(DSLParser.RelationConstraintsContext rcc) {
-    return new RelationConstraints(rcc);
+  static RelationshipConstraints rc(DSLParser.RelationshipConstraintsContext rcc) {
+    return new RelationshipConstraints(rcc);
   }
 
-  private static class RelationConstraints {
+  private static class RelationshipConstraints {
     final String cardinality; 
     final String participation;
 
-    RelationConstraints(String c, String p) {
+    RelationshipConstraints(String c, String p) {
       cardinality = c;
       participation = p != null ? p : PARTIAL_PARTIPATION;
     }
 
-    RelationConstraints(DSLParser.RelationConstraintsContext rcc) {
+    RelationshipConstraints(DSLParser.RelationshipConstraintsContext rcc) {
       this(rcc.card.getText(), rcc.part != null ? rcc.part.getText() : null);
     }
   }
@@ -131,10 +131,10 @@ class ERDiagramGenerator extends DiagramGenerator {
     visitEntity(e.dependent_entity);
     if (includeRelationships()) {
       relationNode(e.idrel.getText(), Dot.DOUBLE_OUTLINE);
-      relationEdge(e.parent_entity.getText(), 
+      relEdge(e.parent_entity.getText(), 
           e.idrel.getText(), 
           rc("1", e.parent_entity_part.part.getText()));
-      relationEdge(e.idrel.getText(), 
+      relEdge(e.idrel.getText(), 
           e.dependent_entity.ID().getText(), 
           rc("N", TOTAL_PARTICIPATION));
     }
@@ -145,7 +145,7 @@ class ERDiagramGenerator extends DiagramGenerator {
     emit(name, " [ ", Dot.Shape.RELATION, " label=\"", name, "\"", modifiers, " ]");
   }
 
-  void relationEdge(String a, String b, RelationConstraints c) {
+  void relEdge(String a, String b, RelationshipConstraints c) {
     String mod = "label=\"" + c.cardinality + "\"";
     if (c.participation.equals(TOTAL_PARTICIPATION)) {
       mod += ", " + Dot.TOTAL_PARTICIPATION; 
@@ -154,13 +154,13 @@ class ERDiagramGenerator extends DiagramGenerator {
   }
 
   @Override
-  public Void visitRelation(DSLParser.RelationContext r) {
+  public Void visitRelationship(DSLParser.RelationshipContext r) {
     if (includeRelationships()) {
       String name = r.name.getText();
       parent.push(name);
       relationNode(name,"");
-      relationEdge(r.entityA.getText(), name, rc(r.constrA));
-      relationEdge(name, r.entityB.getText(), rc(r.constrB));
+      relEdge(r.entityA.getText(), name, rc(r.constrA));
+      relEdge(name, r.entityB.getText(), rc(r.constrB));
       recurse(r);
       parent.pop();
     }

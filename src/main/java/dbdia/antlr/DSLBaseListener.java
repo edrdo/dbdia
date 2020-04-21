@@ -186,25 +186,25 @@ public class DSLBaseListener implements DSLListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRelation(DSLParser.RelationContext ctx) { }
+	@Override public void enterRelationship(DSLParser.RelationshipContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRelation(DSLParser.RelationContext ctx) { }
+	@Override public void exitRelationship(DSLParser.RelationshipContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRelationConstraints(DSLParser.RelationConstraintsContext ctx) { }
+	@Override public void enterRelationshipConstraints(DSLParser.RelationshipConstraintsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRelationConstraints(DSLParser.RelationConstraintsContext ctx) { }
+	@Override public void exitRelationshipConstraints(DSLParser.RelationshipConstraintsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

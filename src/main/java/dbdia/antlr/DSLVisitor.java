@@ -97,17 +97,17 @@ public interface DSLVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParentEntityPart(DSLParser.ParentEntityPartContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link DSLParser#relation}.
+	 * Visit a parse tree produced by {@link DSLParser#relationship}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitRelation(DSLParser.RelationContext ctx);
+	T visitRelationship(DSLParser.RelationshipContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link DSLParser#relationConstraints}.
+	 * Visit a parse tree produced by {@link DSLParser#relationshipConstraints}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitRelationConstraints(DSLParser.RelationConstraintsContext ctx);
+	T visitRelationshipConstraints(DSLParser.RelationshipConstraintsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link DSLParser#relationalSchema}.
 	 * @param ctx the parse tree

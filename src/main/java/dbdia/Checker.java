@@ -66,7 +66,7 @@ final class Checker {
     }
 
     @Override
-    public Void visitRelation(DSLParser.RelationContext r) { 
+    public Void visitRelationship(DSLParser.RelationshipContext r) { 
       check(r.entityA);
       check(r.entityB);
       define(r.name);

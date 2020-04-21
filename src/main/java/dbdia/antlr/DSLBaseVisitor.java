@@ -117,14 +117,14 @@ public class DSLBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements DS
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitRelation(DSLParser.RelationContext ctx) { return visitChildren(ctx); }
+	@Override public T visitRelationship(DSLParser.RelationshipContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitRelationConstraints(DSLParser.RelationConstraintsContext ctx) { return visitChildren(ctx); }
+	@Override public T visitRelationshipConstraints(DSLParser.RelationshipConstraintsContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

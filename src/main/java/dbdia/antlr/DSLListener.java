@@ -150,25 +150,25 @@ public interface DSLListener extends ParseTreeListener {
 	 */
 	void exitParentEntityPart(DSLParser.ParentEntityPartContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link DSLParser#relation}.
+	 * Enter a parse tree produced by {@link DSLParser#relationship}.
 	 * @param ctx the parse tree
 	 */
-	void enterRelation(DSLParser.RelationContext ctx);
+	void enterRelationship(DSLParser.RelationshipContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link DSLParser#relation}.
+	 * Exit a parse tree produced by {@link DSLParser#relationship}.
 	 * @param ctx the parse tree
 	 */
-	void exitRelation(DSLParser.RelationContext ctx);
+	void exitRelationship(DSLParser.RelationshipContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link DSLParser#relationConstraints}.
+	 * Enter a parse tree produced by {@link DSLParser#relationshipConstraints}.
 	 * @param ctx the parse tree
 	 */
-	void enterRelationConstraints(DSLParser.RelationConstraintsContext ctx);
+	void enterRelationshipConstraints(DSLParser.RelationshipConstraintsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link DSLParser#relationConstraints}.
+	 * Exit a parse tree produced by {@link DSLParser#relationshipConstraints}.
 	 * @param ctx the parse tree
 	 */
-	void exitRelationConstraints(DSLParser.RelationConstraintsContext ctx);
+	void exitRelationshipConstraints(DSLParser.RelationshipConstraintsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DSLParser#relationalSchema}.
 	 * @param ctx the parse tree
