@@ -1,6 +1,6 @@
 # dbdia
 
-__Author: [Eduardo R. B. Marques](https://www.dcc.fc.up.pt/~edrdo), DCC/FCUP, 2020__
+__Author: [Eduardo R. B. Marques](https://github.com/edrdo)__
 
 __dbdia__ is open-source software under the terms of the __Apache License 2.0__.
 
