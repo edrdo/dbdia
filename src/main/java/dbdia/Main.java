@@ -24,7 +24,7 @@ public enum Main {
     INSTANCE.onMain(args);
   }
 
-  static final String VERSION = "0.2";
+  static final String VERSION = "0.3";
 
   void onMain(String[] args) {
     try {
