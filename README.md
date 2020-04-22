@@ -1,6 +1,6 @@
 # dbdia
 
-__Author: [Eduardo R. B. Marques](https://www.dcc.fc.up.pt/~edrdo), DCC/FCUP, 2020__
+__Author: [Eduardo R. B. Marques](https://github.com/edrdo)__
 
 __dbdia__ is open-source software under the terms of the __Apache License 2.0__.
 
@@ -17,6 +17,10 @@ The visual syntax employed by __dbdia__ in ER and relational diagrams  mostly fo
 ## Run dbdia online using a Colab notebook
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/edrdo/dbdia/blob/master/src/main/colab/dbdia.ipynb)
+
+## DSL used for ER models and relational schemas
+
+Check [__here__](/DSL.md) for a description of the DSL used by dbdia.
 
 ## Examples
 
