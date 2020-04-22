@@ -18,6 +18,10 @@ The visual syntax employed by __dbdia__ in ER and relational diagrams  mostly fo
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/edrdo/dbdia/blob/master/src/main/colab/dbdia.ipynb)
 
+## DSL used for ER models and relational schemas
+
+Check [__here__](/DSL.md) for a description of the DSL used by dbdia.
+
 ## Examples
 
 Check the __examples__ directory in this repository or in the dbdia release archive.
