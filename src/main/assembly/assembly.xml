@@ -13,6 +13,10 @@
             <outputDirectory>.</outputDirectory>
         </file>
         <file>
+            <source>DSL.md</source>
+            <outputDirectory>.</outputDirectory>
+        </file>
+        <file>
             <source>${project.build.directory}/dbdia-${project.version}.jar</source>
             <outputDirectory>bin</outputDirectory>
         </file>
