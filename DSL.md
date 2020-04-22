@@ -29,6 +29,12 @@ __Notes:__
 - You can use Unicode letters with accents. 
 - Primary key fields in relationship schemas or key fields in an ER model (see below) have the form __`_ fieldName _`__. In these cases, the __`_`__ (underscore) characters at the beggining and the end must be separated from the identifier by white space, given that __`_`__ may also be part of an identifier. This is a deliberate "feature" for now (though obviously not very elegant in grammatical terms).  
 
+### Semantic checks
+
+dbdia performs a few semantic checks:
+
+- You can not define the same symbol twice at the same level of scoping. An error is issued if you try to define two entities/relationships with the same name in an ER model, and similary for tables in relational schemas, fields in tables or entities, etc.
+- You can not make a reference to an undefined symbol. Forward references are allowed though.
 
 ## Relational schemas
 
