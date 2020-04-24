@@ -12,7 +12,7 @@ EntityC ( ) // using the 'rel' diagram type generation
 // Entities involved: EntityA and EntityB
 // Cardinality: 1 to N
 // Participation: partial for EntityA, total for EntityB
-// Relation attributes: none
+// Relationship attributes: none
 
 EntityA --- 1 --- < Rel1 > === N === EntityB
 
@@ -20,7 +20,7 @@ EntityA --- 1 --- < Rel1 > === N === EntityB
 // Entities involved: EntityA and EntityB
 // Cardinality: M to N
 // Participation: partial for both entities
-// Relation attributes: none
+// Relationship attributes: none
 
 EntityA --- M --- < Rel2 > --- N --- EntityB
 
@@ -28,6 +28,6 @@ EntityA --- M --- < Rel2 > --- N --- EntityB
 // Entities involved: EntityA and EntityC
 // Cardinality: 1 to 1
 // Participation: total for EntityA, partial for EntityC
-// Relation attributes: Rattr1, { RAttr2 } as shown.
+// Relationship attributes: Rattr1, { RAttr2 } as shown.
 
 EntityA === 1 === < Rel3( RAttr1, { RAttr2 } )> --- 1 --- EntityC
