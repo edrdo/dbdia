@@ -70,9 +70,9 @@ entRelModel:
   entRelModelItem*
   
 entRelModelItem: 
-    entity          /* Entity type */
-  | relationship    /* Relationship */
-  | weakEntity     /* Weak entity type */
+    entity          // Entity type
+  | relationship    // Relationship
+  | weakEntity      // Weak entity type
 ```
 
 ### Entitity types
