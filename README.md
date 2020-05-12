@@ -30,6 +30,77 @@ The examples can be also be tested directly in the Colab notebook.
 ![Example ER model](/examples/SocialNetwork2_er.svg)
 ![Example Schema](/examples/SocialNetwork2_sch.svg)
 
+### Entity definitions
+
+```
+EntityName 
+(
+  _ KeyField _,
+  OptionalField ?,
+  . DerivedField ., 
+  { MultiValueField },
+  CompositeField ( SubField1, { SubField2 }, SubField3 ?, . SubField4 .),
+  { ComplexField(SubField1, SubField2(SubField21, SubField22)) } 
+)
+```
+![Entity example](/examples/Entity.svg)
+
+### Relationship definitions
+
+```
+EntityA ( ) // with no attributes (just for convenience)
+EntityB ( ) // you can in any case ommit attributes in diagrams
+EntityC ( ) // using the 'rel' diagram type generation
+
+// Relationship: Rel1 
+// Entities involved: EntityA and EntityB
+// Cardinality: 1 to N
+// Participation: partial for EntityA, total for EntityB
+// Relationship attributes: none
+
+EntityA --- 1 --- < Rel1 > === N === EntityB
+
+// Relationship: Rel2
+// Entities involved: EntityA and EntityB
+// Cardinality: M to N
+// Participation: partial for both entities
+// Relationship attributes: none
+
+EntityA --- M --- < Rel2 > --- N --- EntityB
+
+// Relationship: Rel3
+// Entities involved: EntityA and EntityC
+// Cardinality: 1 to 1
+// Participation: total for EntityA, partial for EntityC
+// Relationship attributes: Rattr1, { RAttr2 } as shown.
+
+EntityA === 1 === < Rel3( RAttr1, { RAttr2 } )> --- 1 --- EntityC
+```
+![Relationship example](/examples/Relationships.svg)
+
+### Relational schema definitions
+
+```
+table A
+(
+  _ PrimaryKey _,
+  PlainField, 
+  OptionalField ?, 
+  ForeignKey1 --> A.PrimaryKey,
+  ForeignKey2 --> B.PrimaryKey
+)
+
+// Type info is optional - this table has type annotations per each field
+// Any identifier is accepted for the type designation.
+table B
+(
+  _ PrimaryKey _ int, 
+  PlainField varchar
+) 
+```
+![Schema example](/examples/Schema.svg)
+
+
 ## Download, install, and use
 
 ### Dependencies
