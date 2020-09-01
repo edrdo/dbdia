@@ -157,7 +157,7 @@ public enum Main {
     boolean executeDot = ! Options.format.value.equals("none");
     File dotFile, outputFile;
     if (executeDot) {
-      dotFile = File.createTempFile("erdg", ".dot");
+      dotFile = File.createTempFile("dbdia", ".dot");
       dotFile.deleteOnExit();
       outputFile = new File(outputFileName);
     }
