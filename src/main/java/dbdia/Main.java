@@ -3,6 +3,7 @@ package dbdia;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.charset.Charset;
 import java.util.Arrays;
 
 import org.antlr.v4.runtime.CharStreams;
@@ -26,6 +27,8 @@ public enum Main {
 
   static final String VERSION = "0.3";
 
+  private static final String CHARSET_TO_USE = "UTF-8";
+  
   void onMain(String[] args) {
     try {
       parseArguments(args);
@@ -130,7 +133,7 @@ public enum Main {
       System.err.printf("--> Processing input file %s%n", inputFileName);
     }
     // Build parser object
-    DSLLexer lexer = new DSLLexer(CharStreams.fromFileName(inputFileName));
+    DSLLexer lexer = new DSLLexer(CharStreams.fromFileName(inputFileName, Charset.forName(CHARSET_TO_USE)));
     DSLParser parser = new DSLParser(new CommonTokenStream(lexer));
     ParserErrorStrategy pes = new ParserErrorStrategy();
     parser.setErrorHandler(pes);
@@ -165,7 +168,7 @@ public enum Main {
     if (infoMsgs) {
       System.err.printf("--> Generating Graphviz file onto %s%n", dotFile.getPath());
     }
-    try (PrintStream out = new PrintStream(dotFile)) {
+    try (PrintStream out = new PrintStream(dotFile, CHARSET_TO_USE)) {
       DiagramGenerator dg = typeOfDiagram == DiagramType.sch ?
           new SchemaDiagramGenerator(out, typeOfDiagram) :
             new ERDiagramGenerator(out, typeOfDiagram);
