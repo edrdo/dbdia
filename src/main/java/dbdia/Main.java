@@ -92,13 +92,13 @@ public enum Main {
         }
       }
       if (!valid) {
-        System.err.printf("Invalid option '%s'  ...%n", args[iArg]);
+        System.err.printf("Invalid option '%s' ...%n", args[iArg]);
         System.exit(1);
       }
     }
     // Check for necessary arguments
     if (args.length - iArg != 3) {
-      System.err.printf("Invalid arguments. Please execute 'dbdia help' for help!%n");
+      System.err.printf("Invalid arguments ... use 'dbdia help' for help!%n");
       System.exit(1);
     }
     // Validate diagram type
@@ -106,7 +106,7 @@ public enum Main {
     try {
       typeOfDiagram = DiagramType.valueOf(args[iArg]);
     } catch(IllegalArgumentException e) {
-      System.err.printf("Invalid type of diagram: %s", args[0]);
+      System.err.printf("Invalid type of diagram: %s%n", args[0]);
       System.exit(1);
     }
     // Set variables
@@ -183,13 +183,13 @@ public enum Main {
           dotFile.getPath()
       };
       if (infoMsgs) {
-        System.err.print("--> Executing Graphviz dot program: ");
+        System.err.print("--> Executing dot: ");
         Arrays.asList(dotCommandArgs).forEach(x -> System.err.print(x + ' '));
         System.err.println('\'');
       }
       int exitCode = Shell.execute(dotCommandArgs);
       if (exitCode != 0) {
-        System.err.printf("Dot execution ended in error???%n");
+        System.err.printf("Dot execution ended in error!%n");
       } else if(infoMsgs) {
         System.err.printf("--> Output file: '%s'%n", outputFile.getPath());
       }
