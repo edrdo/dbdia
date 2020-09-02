@@ -190,7 +190,7 @@ public enum Main {
       int exitCode = Shell.execute(dotCommandArgs);
       if (exitCode != 0) {
         System.err.printf("Dot execution ended in error!%n");
-      } else if(infoMsgs) {
+      } else {
         System.err.printf("--> Output file: '%s'%n", outputFile.getPath());
       }
     }
