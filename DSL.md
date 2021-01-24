@@ -21,14 +21,14 @@ C-style comments can be used.
 
 ```
 ID: 
-    [Alpha|\_] (Alpha|Digit|\_)* 
+    [Alpha] ((Alpha|Digit|\_)*(Alpha|Digit))?
 ```
 
 __Notes:__ 
 
 - You can use Unicode letters with accents. 
-- Primary key fields in relationship schemas or key fields in an ER model (see below) have the form __`_ fieldName _`__. In these cases, the __`_`__ (underscore) characters at the beggining and the end must be separated from the identifier by white space, given that __`_`__ may also be part of an identifier. This is a deliberate feature for now (though obviously not very elegant in grammatical terms).  
-
+- The underscore can not be used as a beggining or end character (versions 0.4 or higher).
+ 
 ### Semantic checks
 
 dbdia performs a few semantic checks:

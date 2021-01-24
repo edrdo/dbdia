@@ -5,7 +5,7 @@
 */
 EntityName 
 (
-  _ KeyField _,
+  _KeyField_,
   OptionalField ?,
   . DerivedField ., 
   { MultiValueField },
