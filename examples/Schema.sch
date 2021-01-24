@@ -1,4 +1,4 @@
-*
+/*
  dbdia example - basic aspects of relational schema definition
  Eduardo Marques
  https://github.com/edrdo/dbdia
