@@ -19,6 +19,7 @@
         <file>
             <source>${project.build.directory}/dbdia-${project.version}.jar</source>
             <outputDirectory>bin</outputDirectory>
+            <destName>dbdia.jar</destName>
         </file>
     </files>
     <fileSets>
@@ -33,13 +34,6 @@
         <fileSet>
             <directory>examples</directory>
             <outputDirectory>examples</outputDirectory>
-        </fileSet>
-        <fileSet>
-            <directory>${project.build.directory}</directory>
-            <outputDirectory>bin</outputDirectory>
-            <includes>
-                <include>dbdia-${project.version}.jar</include>
-            </includes>
         </fileSet>
     </fileSets>
 </assembly>

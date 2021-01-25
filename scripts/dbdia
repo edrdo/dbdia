@@ -1,5 +1,5 @@
 #! /bin/bash
 
-java -cp $(dirname $0)/dbdia-0.4.jar dbdia.Main $* 
+java -cp $(dirname $0)/dbdia.jar dbdia.Main $* 
 
 exit $?
