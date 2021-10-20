@@ -40,7 +40,7 @@ public enum Main {
     INSTANCE.onMain(args);
   }
 
-  static final String VERSION = "0.5";
+  static final String VERSION = "0.6-SNAPSHOT";
 
   private static final String CHARSET_TO_USE = "UTF-8";
   
