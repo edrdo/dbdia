@@ -72,6 +72,7 @@ public class ParserTest {
     ParserErrorStrategy pes = new ParserErrorStrategy();
     parser.setErrorHandler(pes);
     parser.addParseListener(new PL());
+    @SuppressWarnings("unused")
     DSLParser.RootContext root = parser.root();
     int errors = pes.getErrorCount();
     if (errors != 0) {
