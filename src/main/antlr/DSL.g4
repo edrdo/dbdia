@@ -34,7 +34,7 @@ grammar DSL;
 package dbdia.antlr;
 }
 
-root: entRelModel | relationalSchema;
+root: (entRelModel | relationalSchema) EOF;
 
 // ENTITY-RELATIONSHIP MODEL
 
