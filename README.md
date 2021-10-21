@@ -122,8 +122,8 @@ sudo apt intall graphviz
 
 ### Install
 
-- Download the ZIP of the latest release [here](https://github.com/edrdo/dbdia/releases/download/0.3/dbdia-0.3-release.zip).
-- Unzip it to some folder __<DBDIA_PATH>__
+- Download the ZIP of the latest release [here](https://github.com/edrdo/dbdia/releases).
+- Unzip the release archive to some folder __<DBDIA_PATH>__
 - The __dbdia__ script (for Linux/MacOS/POSIX) and the __dbdia.bat__
 variant for Windows can be found in __<DBDIA_PATH>/bin__. 
 It may be convenient to add __<DBDIA_PATH>/bin__ to your __PATH__ environment.
