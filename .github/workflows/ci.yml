@@ -12,9 +12,9 @@ jobs:
       matrix:
         include:
           - title: "JDK 8"
-            java: 8
+            java: "8"
           - title: "JDK 11"
-            java: 11
+            java: "11"
           - title: "JDK 17"
             java: "17"
     runs-on: ubuntu-latest
@@ -25,6 +25,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: ${{ matrix.java }}
+          distribution: "adopt"
       - name: 'Display JDK version'
         run: java -version
       - name: Cache local Maven repository
