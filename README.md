@@ -1,7 +1,7 @@
 
 [![License: Apache 2.0](https://img.shields.io/github/license/edrdo/dbdia)](https://github.com/edrdo/dbdia/blob/master/LICENSE.txt)
 [![GitHub release](https://img.shields.io/github/v/release/edrdo/dbdia)](https://github.com/edrdo/dbdia/releases)
-[![Travis build Status](https://api.travis-ci.org/edrdo/dbdia.png?branch=master)](https://travis-ci.org/edrdo/dbdia)
+![CI](https://github.com/edrdo/dbdia/actions/workflows/ci.yml/badge.svg)
 
 # dbdia
 
