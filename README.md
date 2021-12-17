@@ -1,7 +1,7 @@
 
 [![License: Apache 2.0](https://img.shields.io/github/license/edrdo/dbdia)](https://github.com/edrdo/dbdia/blob/master/LICENSE.txt)
 [![GitHub release](https://img.shields.io/github/v/release/edrdo/dbdia)](https://github.com/edrdo/dbdia/releases)
-![CI](https://github.com/edrdo/dbdia/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/edrdo/dbdia/actions/workflows/ci.yml/badge.svg)](https://github.com/edrdo/dbdia/actions/workflows/ci.yml)
 
 # dbdia
 
