@@ -20,11 +20,13 @@ package dbdia;
  */
 public interface Dot {
   
+  String GRAPH = "graph";
+  String SUBGRAPH_CLUSTER = "subgraph cluster_";
   String DOUBLE_OUTLINE = "peripheries=\"2\"";
-  
-  String ER_ATTRIBUTE_SHAPE = "ellipse";
 
-  String TOTAL_PARTICIPATION = "color=\"black:invis:black\"";
+  String DASHED_STYLE = "style =\"dashed\"";
+  
+  String INVISIBLE_STYLE = "style=\"invis\"";
   
   /**
    * Shapes.

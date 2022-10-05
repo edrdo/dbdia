@@ -70,7 +70,7 @@ class ERDiagramGenerator extends DiagramGenerator {
   @Override
   public Void visitDerivedField(DSLParser.DerivedFieldContext df) {
     String name = df.name.getText();
-    fieldNode(name, "\"" + name + "\"", "style =\"dashed\"");
+    fieldNode(name, "\"" + name + "\"", Dot.DASHED_STYLE);
     return null;
   }
   
@@ -103,9 +103,9 @@ class ERDiagramGenerator extends DiagramGenerator {
     String eid = e.name.getText();
     String mod = e.getParent() instanceof DSLParser.WeakEntityContext ?
         Dot.DOUBLE_OUTLINE : "";
-    emit("subgraph cluster_", eid);
+    emit(Dot.SUBGRAPH_CLUSTER, eid);
     section(() -> {
-      emit("style=\"invis\"");
+      emit(Dot.INVISIBLE_STYLE);
       emit(eid, " [ ", Dot.Shape.ENTITY, " label=\"" + eid + "\" ", mod, " ]");
       if (includeEntityAttributes()) {
         parent.push(eid);
@@ -163,7 +163,8 @@ class ERDiagramGenerator extends DiagramGenerator {
   void relEdge(String a, String b, RelationshipConstraints c) {
     String mod = "label=\"" + c.cardinality + "\"";
     if (c.participation.equals(TOTAL_PARTICIPATION)) {
-      mod += ", " + Dot.TOTAL_PARTICIPATION; 
+      mod += ", " + "color=\"" + Options.color.value 
+          + ":invis:" + Options.color.value + "\"";  
     }
     edge(a, b, mod);
   }
@@ -184,7 +185,7 @@ class ERDiagramGenerator extends DiagramGenerator {
 
   @Override
   public Void visitEntRelModel(DSLParser.EntRelModelContext erModel) {
-    emit("graph");
+    emit(Dot.GRAPH);
     section(() -> {
       Options[] graphOpts = { 
           Options.layout,
