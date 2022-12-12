@@ -135,7 +135,6 @@ tableForeignKeyReference:
 
 // TOKENS
 
-//ID: [\p{Alpha}\p{General_Category=Other_Letter}_] [\p{Alnum}\p{General_Category=Other_Letter}_]*  ;
 ID: [\p{Alpha}\p{General_Category=Other_Letter}] ([\p{Alnum}\p{General_Category=Other_Letter}_]*[\p{Alnum}\p{General_Category=Other_Letter}])?  ;
 
 
